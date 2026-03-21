@@ -36,9 +36,11 @@ of severe anxiety and substance use disorders in a US patient population.
 ## Introduction
 Mental health disorders and substance use disorders are major public health challenges. 
 Social and economic factors — particularly income — may play a significant role in 
-both the development and treatment of these conditions.
-
----
+both the development and treatment of these conditions. Income is widely used in 
+epidemiological research as a proxy for socioeconomic status, reflecting access to 
+resources, living conditions, and overall quality of life. We therefore focus on 
+income as our primary socioeconomic indicator to explore its association with 
+anxiety and addiction in this patient population.
 
 ## Data Overview
 This project uses the following datasets from the STA220 course (synthetic US health data):
@@ -68,8 +70,11 @@ This project uses the following datasets from the STA220 course (synthetic US he
 ## Limitations
 - This analysis shows associations but cannot establish causal relationships
 - Results are based on synthetic data and may not reflect real-world patterns
-- Other confounding variables not captured in the dataset may influence results
-
+- Other confounding variables not captured in the dataset may influence 
+  results, such as history of trauma, social isolation, or employment 
+  status, which may have an equal or greater effect on anxiety and 
+  addiction than income alone.
+  
 ---
 
 ## Reproducibility
