@@ -30,6 +30,7 @@ of severe anxiety and substance use disorders in a US patient population.
 - Is income associated with the prevalence of severe anxiety?
 - Is income associated with substance use disorders (alcohol, drugs, opioids)?
 - Do anxiety and addiction co-occur more frequently among lower-income patients?
+- Does the relationship between income and these conditions differ by gender?
 
 ---
 
