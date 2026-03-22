@@ -1,0 +1,58 @@
+---
+title: "Socioeconomic Drivers of Health"
+subtitle: "Income, Anxiety, and Substance Use"
+author: "STA220 Project Team"
+format: 
+  revealjs:
+    theme: night
+    transition: slide
+    slide-number: true
+    scrollable: true
+---
+
+## Research Questions
+
+1.  Is **income** associated with the prevalence of **severe anxiety**?
+2.  Is **income** associated with **substance use disorders**?
+3.  Do these associations differ by **age** or **gender**?
+
+## Data Overview
+
+We linked two primary datasets for this analysis:
+- **Patients Dataset**: Demographic info (Income, Age, Gender).
+- **Conditions Dataset**: Clinical records (SNOMED codes for Anxiety and Substance Use).
+
+```{r setup, include=FALSE}
+library(targets)
+library(ggplot2)
+library(gt)
+```
+
+## Population Demographics
+
+*A look at our cohort distribution across income quartiles.*
+
+```{r}
+#| echo: false
+tar_read(tab_demo)
+```
+
+## Income vs. Condition Prevalence
+
+*Does earning more correlate with lower health risks?*
+
+```{r}
+#| echo: false
+#| fig-align: center
+tar_read(fig_prev)
+```
+
+## The Role of Gender & Age
+
+*Exploring if the income-health relationship is universal.*
+
+```{r}
+#| echo: false
+#| fig-align: center
+tar_read(fig_interact)
+```
