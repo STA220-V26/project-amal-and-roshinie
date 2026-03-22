@@ -1,7 +1,7 @@
 ---
 title: "Socioeconomic Drivers of Health"
 subtitle: "Income, Anxiety, and Substance Use"
-author: "STA220 Project Team"
+author: "Amal Ben Zalouh & Roshinie. C. De Silva"
 format: 
   revealjs:
     theme: night
