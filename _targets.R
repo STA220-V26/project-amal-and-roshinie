@@ -57,7 +57,6 @@ list(
   # Outputs
   tar_target(tab_demo, create_demographic_table(data_final)),
   tar_target(fig_prev, plot_income_prevalence(data_final)),
-  tar_target(fig_interact, plot_demographic_interaction(data_final)),
   tar_target(models, run_models(data_final)),
 
   # Render Quarto presentation

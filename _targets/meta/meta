@@ -11,13 +11,7 @@ data|object|8278f06749e80b22|||||||||||||||
 model_anxiety|object|05e9db2b20e5601b|||||||||||||||
 file_patients|stem|471a167305704dbb|260d7f4441c98ccb|2c530c1562a7fbd1|342493610|data/data-fixed/patients.csv|t20362.6353009259s|s1747857b|1747857|file|local|vector|||0||
 file_conditions|stem|f61c0fea83f09c76|c0cf6b2931a2653b|2c530c1562a7fbd1|1919619173|data/data-fixed/conditions.csv|t20362.6352777778s|s56208521b|56208521|file|local|vector|||0||
-plot_income_prevalence|function|51a5623784492521
-run_models|function|5279875ad26fba0e
-pkgs|object|671489247e95a3a6
-create_demographic_table|function|c058f85a11411abb
 plot_demographic_interaction|function|42c5b1413bff9e9c
-clean_patients|function|e757ce39ea602fcf
-identify_conditions|function|bafe361d16fc405f
 data_patients|stem|eb50de9075acc42f|b61e6e092761df0f|0f1e92576ebfeb9d|-950687572||t20534.5941661661s|s74030b|74030|qs|local|vector|||0.6||
 data_flags|stem|8f7e8c5b917442d1|90b68855dfe42605|bdcc36c387047cf8|-1135103122||t20534.5941825359s|s11930b|11930|qs|local|vector|||1.11||
 data_final|stem|fd371467b018feea|0f6b654b9ef6f3ef|170570d52055e01f|-452558307||t20534.5941862589s|s78579b|78579|qs|local|vector|||0.03||
@@ -25,4 +19,10 @@ fig_interact|stem|a70ba91e8ffcda3b|881705673980cee5|07e0991e8beea1cc|525930242||
 tab_demo|stem|3b404408b74a3b5b|58a8c75ba0de2cc4|b018199aa903a17c|-1979053755||t20534.5941910885s|s86059b|86059|qs|local|vector|||0.06||
 fig_prev|stem|a9b24a6d6f2ce1a6|1cb940e27cf0362e|20e6e2b28bddd495|-701703191||t20534.5941952794s|s263771b|263771|qs|local|vector|||0.18||
 models|stem|2f8b7cc7d3c45e99|e70bc805f55efad4|345687556d4d0e09|-1655822660||t20534.5942106376s|s711b|711|qs|local|vector|||1.17||
-presentation_slides|stem|7b685f5d8733100e|b800894f4ec77b3a|d124228d61031e3e|809846502|docs/presentation.html*docs/presentation.qmd|t20534.5946761262s|s37091b|37091|file|local|vector|||40.16||
+plot_income_prevalence|function|51a5623784492521
+run_models|function|5279875ad26fba0e
+pkgs|object|671489247e95a3a6
+create_demographic_table|function|c058f85a11411abb
+clean_patients|function|e757ce39ea602fcf
+identify_conditions|function|bafe361d16fc405f
+presentation_slides|stem|b6a99eef6997474a|ba36c9573ceb74dc|c0ed0f3063727061|809846502|docs/presentation.html*docs/presentation.qmd|t20534.634360384s|s44201b|44201|file|local|vector|||12.13||

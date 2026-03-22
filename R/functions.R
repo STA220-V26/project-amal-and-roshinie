@@ -97,29 +97,6 @@ plot_income_prevalence <- function(data) {
     )
 }
 
-# 5. Anxiety Prevalence by Income, Gender and Age Group
-plot_demographic_interaction <- function(data) {
-  data %>%
-    mutate(income_group = cut(income_log,
-                               breaks = 4,
-                               labels = c("Lowest", "Lower-Mid",
-                                          "Upper-Mid", "Highest"))) %>%
-    group_by(income_group, gender, age_group) %>%
-    summarise(anxiety_prev = mean(has_anxiety) * 100, .groups = "drop") %>%
-    ggplot(aes(x = income_group, y = anxiety_prev,
-               color = gender, group = gender)) +
-    geom_line(linewidth = 1) +
-    geom_point() +
-    facet_wrap(~ age_group) +
-    theme_minimal() +
-    labs(
-      title = "Anxiety Prevalence: Interaction of Income, Gender, and Age",
-      y = "Anxiety Prevalence (%)",
-      x = "Income Group (Log-transformed)",
-      color = "Gender"
-    )
-}
-
 # 6. Logistic Regression Models
 run_models <- function(data) {
   data_older <- data %>% filter(age_group == "35 and over")
