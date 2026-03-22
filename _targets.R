@@ -1,0 +1,54 @@
+# Created by use_targets().
+# Follow the comments below to fill in this target script.
+# Then follow the manual to check and run the pipeline:
+#   https://books.ropensci.org/targets/walkthrough.html#inspect-the-pipeline
+
+# Load packages required to define the pipeline:
+library(targets)
+library(tarchetypes) 
+
+# Set target options:
+pkgs <- c(
+  "janitor", # data cleaning
+  "labelled", # labeling data
+  "pointblank", # data validation and exploration
+  "rvest", # get data from web pages
+  "tidyverse", # Data management
+  "data.table", # fast data management
+  "fs", # to work wit hthe file system
+  "zip" # manipulate zip files
+)
+
+invisible(lapply(pkgs, library, character.only = TRUE))
+
+# Set target options:
+tar_option_set(
+  # Packages that your targets need for their tasks:
+  packages = pkgs,
+  format = "qs", # Default storage format. qs (which is actually qs2) is fast.
+)
+
+# Run the R scripts stored in the R/ folder where your have stored your custom functions:
+tar_source()
+# tar_source("other_functions.R") # Source other scripts as needed.
+
+
+# We first download the data health care data of interest
+if (!fs::file_exists("data.zip")) {
+  message("Downloading data.zip from GitHub")
+  curl::curl_download(
+    "https://github.com/STA220/cs/raw/refs/heads/main/data.zip",
+    "data.zip",
+    quiet = FALSE
+  )
+}
+
+#Create data directory
+if (!dir.exists("data")) dir.create("data")
+
+#Add the needed data files to the directory
+unzip(
+  zipfile = "data.zip", 
+  files = c("data-fixed/patients.csv", "data-fixed/conditions.csv"),
+  exdir = "data"
+)
