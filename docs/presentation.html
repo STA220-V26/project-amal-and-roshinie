@@ -6,10 +6,10 @@
 <script src="presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.27">
+<link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Amal Ben Zalouh &amp; Roshinie. C. De Silva">
+  <meta name="author" content="Alma Ben Zalouh &amp; Roshinie C. De Silva">
   <title>Socioeconomic Drivers of Health</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -29,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-422092a5e00d6ffa3175d97bbb8f7ab9.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -134,7 +137,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Amal Ben Zalouh &amp; Roshinie. C. De Silva 
+Alma Ben Zalouh &amp; Roshinie C. De Silva 
 </div>
 </div>
 </div>
@@ -150,30 +153,35 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
 </section>
 <section id="data-overview" class="slide level2">
 <h2>Data Overview</h2>
-<p>We linked two primary datasets for this analysis: - <strong>Patients Dataset</strong>: Demographic info (Income, Age, Gender). - <strong>Conditions Dataset</strong>: Clinical records (SNOMED codes for Anxiety and Substance Use).</p>
+<p>We linked two primary datasets for this analysis:</p>
+<ul>
+<li><strong>Patients Dataset</strong>: Demographic info (Income, Age, Gender)</li>
+<li><strong>Conditions Dataset</strong>: Clinical records (SNOMED codes for Anxiety and Substance Use)</li>
+</ul>
+<p><strong>Data cleaning:</strong> - Removed deceased patients - Removed impossible ages - Removed extreme income outlier ($20) - Kept living adults aged 18+ - Log-transformed income to address right skew</p>
 </section>
 <section id="population-demographics" class="slide level2">
 <h2>Population Demographics</h2>
-<p><em>A look at our cohort distribution across income quartiles.</em></p>
+<p><em>A look at our cohort distribution across age groups and gender.</em></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fihbyawowc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fihbyawowc table {
+<div id="qaapaegnwj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qaapaegnwj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fihbyawowc thead, #fihbyawowc tbody, #fihbyawowc tfoot, #fihbyawowc tr, #fihbyawowc td, #fihbyawowc th {
+#qaapaegnwj thead, #qaapaegnwj tbody, #qaapaegnwj tfoot, #qaapaegnwj tr, #qaapaegnwj td, #qaapaegnwj th {
   border-style: none;
 }
 
-#fihbyawowc p {
+#qaapaegnwj p {
   margin: 0;
   padding: 0;
 }
 
-#fihbyawowc .gt_table {
+#qaapaegnwj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -199,12 +207,12 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-left-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_caption {
+#qaapaegnwj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fihbyawowc .gt_title {
+#qaapaegnwj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -216,7 +224,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-bottom-width: 0;
 }
 
-#fihbyawowc .gt_subtitle {
+#qaapaegnwj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -228,7 +236,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-top-width: 0;
 }
 
-#fihbyawowc .gt_heading {
+#qaapaegnwj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -240,13 +248,13 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-right-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_bottom_border {
+#qaapaegnwj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_col_headings {
+#qaapaegnwj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -261,7 +269,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-right-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_col_heading {
+#qaapaegnwj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -281,7 +289,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   overflow-x: hidden;
 }
 
-#fihbyawowc .gt_column_spanner_outer {
+#qaapaegnwj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -293,15 +301,15 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 4px;
 }
 
-#fihbyawowc .gt_column_spanner_outer:first-child {
+#qaapaegnwj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fihbyawowc .gt_column_spanner_outer:last-child {
+#qaapaegnwj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fihbyawowc .gt_column_spanner {
+#qaapaegnwj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -313,11 +321,11 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   width: 100%;
 }
 
-#fihbyawowc .gt_spanner_row {
+#qaapaegnwj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fihbyawowc .gt_group_heading {
+#qaapaegnwj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -343,7 +351,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   text-align: left;
 }
 
-#fihbyawowc .gt_empty_group_heading {
+#qaapaegnwj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -358,15 +366,15 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   vertical-align: middle;
 }
 
-#fihbyawowc .gt_from_md > :first-child {
+#qaapaegnwj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fihbyawowc .gt_from_md > :last-child {
+#qaapaegnwj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fihbyawowc .gt_row {
+#qaapaegnwj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -385,7 +393,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   overflow-x: hidden;
 }
 
-#fihbyawowc .gt_stub {
+#qaapaegnwj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -398,7 +406,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 5px;
 }
 
-#fihbyawowc .gt_stub_row_group {
+#qaapaegnwj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -412,15 +420,15 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   vertical-align: top;
 }
 
-#fihbyawowc .gt_row_group_first td {
+#qaapaegnwj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fihbyawowc .gt_row_group_first th {
+#qaapaegnwj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fihbyawowc .gt_summary_row {
+#qaapaegnwj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -430,16 +438,16 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 5px;
 }
 
-#fihbyawowc .gt_first_summary_row {
+#qaapaegnwj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_first_summary_row.thick {
+#qaapaegnwj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fihbyawowc .gt_last_summary_row {
+#qaapaegnwj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -449,7 +457,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-bottom-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_grand_summary_row {
+#qaapaegnwj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -459,7 +467,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 5px;
 }
 
-#fihbyawowc .gt_first_grand_summary_row {
+#qaapaegnwj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -469,7 +477,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-top-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_last_grand_summary_row_top {
+#qaapaegnwj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -479,11 +487,11 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-bottom-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_striped {
+#qaapaegnwj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fihbyawowc .gt_table_body {
+#qaapaegnwj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -492,7 +500,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-bottom-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_footnotes {
+#qaapaegnwj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -506,7 +514,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-right-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_footnote {
+#qaapaegnwj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -515,7 +523,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 5px;
 }
 
-#fihbyawowc .gt_sourcenotes {
+#qaapaegnwj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -529,7 +537,7 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   border-right-color: #D3D3D3;
 }
 
-#fihbyawowc .gt_sourcenote {
+#qaapaegnwj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -537,72 +545,72 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
   padding-right: 5px;
 }
 
-#fihbyawowc .gt_left {
+#qaapaegnwj .gt_left {
   text-align: left;
 }
 
-#fihbyawowc .gt_center {
+#qaapaegnwj .gt_center {
   text-align: center;
 }
 
-#fihbyawowc .gt_right {
+#qaapaegnwj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fihbyawowc .gt_font_normal {
+#qaapaegnwj .gt_font_normal {
   font-weight: normal;
 }
 
-#fihbyawowc .gt_font_bold {
+#qaapaegnwj .gt_font_bold {
   font-weight: bold;
 }
 
-#fihbyawowc .gt_font_italic {
+#qaapaegnwj .gt_font_italic {
   font-style: italic;
 }
 
-#fihbyawowc .gt_super {
+#qaapaegnwj .gt_super {
   font-size: 65%;
 }
 
-#fihbyawowc .gt_footnote_marks {
+#qaapaegnwj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fihbyawowc .gt_asterisk {
+#qaapaegnwj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fihbyawowc .gt_indent_1 {
+#qaapaegnwj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fihbyawowc .gt_indent_2 {
+#qaapaegnwj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fihbyawowc .gt_indent_3 {
+#qaapaegnwj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fihbyawowc .gt_indent_4 {
+#qaapaegnwj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fihbyawowc .gt_indent_5 {
+#qaapaegnwj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fihbyawowc .katex-display {
+#qaapaegnwj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fihbyawowc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qaapaegnwj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -610,39 +618,54 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
 <table class="gt_table caption-top" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Patient Demographics by Income Quartile</td>
+<td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Patient Demographics by Age Group and Gender</td>
 </tr>
 <tr class="gt_col_headings even">
-<th id="income_label" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">income_label</th>
-<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">n</th>
-<th id="avg_age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">avg_age</th>
-<th id="pct_female" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">pct_female</th>
+<th id="age_group" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">Age Group</th>
+<th id="gender" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Gender</th>
+<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">N</th>
+<th id="avg_age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean Age</th>
+<th id="avg_income" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Mean Income ($)</th>
+<th id="anxiety_pct" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Anxiety (%)</th>
+<th id="addiction_pct" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Addiction (%)</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_center" headers="income_label">Lowest</td>
-<td class="gt_row gt_right" headers="n">1713</td>
-<td class="gt_row gt_right" headers="avg_age">44.0</td>
-<td class="gt_row gt_right" headers="pct_female">51.4</td>
+<td class="gt_row gt_center" headers="age_group">Under 35</td>
+<td class="gt_row gt_left" headers="gender">F</td>
+<td class="gt_row gt_right" headers="n">728</td>
+<td class="gt_row gt_right" headers="avg_age">25.9</td>
+<td class="gt_row gt_right" headers="avg_income">95,148.2</td>
+<td class="gt_row gt_right" headers="anxiety_pct">18.0</td>
+<td class="gt_row gt_right" headers="addiction_pct">31.2</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_center" headers="income_label">Lower-Mid</td>
-<td class="gt_row gt_right" headers="n">1713</td>
-<td class="gt_row gt_right" headers="avg_age">42.8</td>
-<td class="gt_row gt_right" headers="pct_female">49.4</td>
+<td class="gt_row gt_center" headers="age_group">Under 35</td>
+<td class="gt_row gt_left" headers="gender">M</td>
+<td class="gt_row gt_right" headers="n">665</td>
+<td class="gt_row gt_right" headers="avg_age">26.2</td>
+<td class="gt_row gt_right" headers="avg_income">87,250.5</td>
+<td class="gt_row gt_right" headers="anxiety_pct">10.7</td>
+<td class="gt_row gt_right" headers="addiction_pct">32.2</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_center" headers="income_label">Upper-Mid</td>
-<td class="gt_row gt_right" headers="n">1713</td>
-<td class="gt_row gt_right" headers="avg_age">44.4</td>
-<td class="gt_row gt_right" headers="pct_female">50.4</td>
+<td class="gt_row gt_center" headers="age_group">35 and over</td>
+<td class="gt_row gt_left" headers="gender">F</td>
+<td class="gt_row gt_right" headers="n">1577</td>
+<td class="gt_row gt_right" headers="avg_age">55.5</td>
+<td class="gt_row gt_right" headers="avg_income">91,569.0</td>
+<td class="gt_row gt_right" headers="anxiety_pct">37.0</td>
+<td class="gt_row gt_right" headers="addiction_pct">54.4</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_center" headers="income_label">Highest</td>
-<td class="gt_row gt_right" headers="n">1712</td>
-<td class="gt_row gt_right" headers="avg_age">44.0</td>
-<td class="gt_row gt_right" headers="pct_female">50.7</td>
+<td class="gt_row gt_center" headers="age_group">35 and over</td>
+<td class="gt_row gt_left" headers="gender">M</td>
+<td class="gt_row gt_right" headers="n">1486</td>
+<td class="gt_row gt_right" headers="avg_age">55.9</td>
+<td class="gt_row gt_right" headers="avg_income">93,418.5</td>
+<td class="gt_row gt_right" headers="anxiety_pct">27.1</td>
+<td class="gt_row gt_right" headers="addiction_pct">57.7</td>
 </tr>
 </tbody>
 </table>
@@ -656,12 +679,153 @@ Amal Ben Zalouh &amp; Roshinie. C. De Silva
 <p><em>Does earning more correlate with lower health risks?</em></p>
 
 <img data-src="presentation_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="the-role-of-gender-age" class="slide level2">
-<h2>The Role of Gender &amp; Age</h2>
-<p><em>Exploring if the income-health relationship is universal.</em></p>
+<section id="statistical-results-addiction-35-and-over" class="slide level2">
+<h2>Statistical Results: Addiction (35 and over)</h2>
+<p><em>Logistic regression — Addiction ~ Income + Gender</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">OR</th>
+<th style="text-align: right;">Std Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P-value</th>
+<th style="text-align: right;">CI Low</th>
+<th style="text-align: right;">CI High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">7.825</td>
+<td style="text-align: right;">0.385</td>
+<td style="text-align: right;">5.348</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">3.694</td>
+<td style="text-align: right;">16.696</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">income_log</td>
+<td style="text-align: right;">0.841</td>
+<td style="text-align: right;">0.035</td>
+<td style="text-align: right;">-4.936</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.785</td>
+<td style="text-align: right;">0.901</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genderM</td>
+<td style="text-align: right;">1.154</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">1.955</td>
+<td style="text-align: right;">0.051</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1.332</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote>
+<p>Higher income is associated with <strong>lower odds of addiction</strong> in adults 35 and over (OR = 0.85, CI [0.80-0.91])</p>
+</blockquote>
+</section>
+<section id="statistical-results-anxiety-all-adults" class="slide level2">
+<h2>Statistical Results: Anxiety (All Adults)</h2>
+<p><em>Logistic regression — Anxiety ~ Gender + Age Group</em></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">OR</th>
+<th style="text-align: right;">Std Error</th>
+<th style="text-align: right;">Statistic</th>
+<th style="text-align: right;">P-value</th>
+<th style="text-align: right;">CI Low</th>
+<th style="text-align: right;">CI High</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">0.209</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">-19.264</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.178</td>
+<td style="text-align: right;">0.245</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">genderM</td>
+<td style="text-align: right;">0.616</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">-6.926</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.536</td>
+<td style="text-align: right;">0.706</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_group35 and over</td>
+<td style="text-align: right;">2.838</td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: right;">12.162</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2.404</td>
+<td style="text-align: right;">3.365</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<blockquote>
+<p>Women are significantly <strong>more likely to have anxiety</strong> than men (OR = 0.62 for males)</p>
+</blockquote>
+<blockquote>
+<p>Anxiety nearly <strong>triples after age 35</strong> (OR = 2.84)</p>
+</blockquote>
+</section>
+<section id="key-findings" class="slide level2 scrollable">
+<h2>Key Findings</h2>
+<ol type="1">
+<li><strong>Addiction rises sharply with age</strong> — from ~31% under 35 to ~56% over 35</li>
+<li><strong>Higher income protects against addiction</strong> in adults 35+ (OR = 0.85)</li>
+<li><strong>Women more anxious than men</strong> at all ages (OR = 0.62 for males)</li>
+<li><strong>Anxiety nearly triples after 35</strong> (OR = 2.84)</li>
+<li><strong>Income not associated with anxiety</strong> at any age</li>
+</ol>
+</section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<ul>
+<li>Analysis shows <strong>associations</strong>, not causality</li>
+<li>Based on <strong>synthetic data</strong> — may not reflect real-world patterns</li>
+<li>Other confounders not captured (trauma, social isolation, employment)</li>
+<li>Age calculated using 2024 as reference year</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<blockquote>
+<p><em>“The socioeconomic gradient in addiction only emerges after age 35 — suggesting cumulative economic disadvantage over time drives substance use disorders more than current income alone.”</em></p>
+</blockquote>
+<blockquote>
+<p><em>“Gender differences in anxiety are consistent across age groups and independent of income.”</em></p>
+</blockquote>
 
-
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

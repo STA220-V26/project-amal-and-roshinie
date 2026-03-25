@@ -1,7 +1,7 @@
 ---
 title: "Socioeconomic Drivers of Health"
 subtitle: "Income, Anxiety, and Substance Use"
-author: "Amal Ben Zalouh & Roshinie. C. De Silva"
+author: "Amal Ben Zalouh & Roshinie C. De Silva"
 format: 
   revealjs:
     theme: night
@@ -12,26 +12,33 @@ format:
 
 ## Research Questions
 
-1.  Is **income** associated with the prevalence of **severe anxiety**?
-2.  Is **income** associated with **substance use disorders**?
-3.  Do these associations differ by **age** or **gender**?
+1. Is **income** associated with the prevalence of **severe anxiety**?
+2. Is **income** associated with **substance use disorders**?
+3. Do these associations differ by **age** or **gender**?
 
 ## Data Overview
 
 We linked two primary datasets for this analysis:
-- **Patients Dataset**: Demographic info (Income, Age, Gender).
-- **Conditions Dataset**: Clinical records (SNOMED codes for Anxiety and Substance Use).
 
+- **Patients Dataset**: Demographic info (Income, Age, Gender)
+- **Conditions Dataset**: Clinical records (SNOMED codes for Anxiety and Substance Use)
+
+**Data cleaning:**
+- Removed deceased patients
+- Removed impossible ages
+- Removed extreme income outlier ($20)
+- Kept living adults aged 18+
+- Log-transformed income to address right skew
 ```{r setup, include=FALSE}
 library(targets)
 library(ggplot2)
 library(gt)
+library(knitr)
 ```
 
 ## Population Demographics
 
-*A look at our cohort distribution across income quartiles.*
-
+*A look at our cohort distribution across age groups and gender.*
 ```{r}
 #| echo: false
 tar_read(tab_demo)
@@ -40,20 +47,30 @@ tar_read(tab_demo)
 ## Income vs. Condition Prevalence
 
 *Does earning more correlate with lower health risks?*
-
 ```{r}
 #| echo: false
 #| fig-align: center
 tar_read(fig_prev)
 ```
 
-## The Role of Gender & Age
+## Statistical Results: Addiction (35 and over)
 
-*Exploring if the income-health relationship is universal.*
+*Logistic regression — Addiction ~ Income + Gender*
+```{r}
+#| echo: false
+tar_read(models)$addiction_35plus |>
+  kable(digits = 3, col.names = c("Term", "OR", "Std Error", 
+                                   "Statistic", "P-value", 
+                                   "CI Low", "CI High"))
+```
 
+> Higher income is associated with **lower odds of addiction** in adults 35 and over (OR = 0.85, CI [0.80-0.91])
+
+## Statistical Results: Anxiety (All Adults)
+
+*Logistic regression — Anxiety ~ Gender + Age Group*
 ```{r}
 #| echo: false
 #| fig-align: center
 tar_read(fig_interact)
 ```
-

@@ -1,8 +1,7 @@
-# Anxiety and Addiction in US Adults: 
-# Associations with Income, Age and Gender
+# Anxiety and Addiction in US Adults: Associations with Income, Age and Gender
 
 ## Authors
-- Amal
+- Alma
 - Roshinie
 
 ## Course
@@ -74,19 +73,22 @@ This project uses the following datasets from the STA220 course (synthetic US he
 5. Split population into two age groups: under 35 and 35 and over
 6. Descriptive analysis: prevalence by age group and gender
 7. Logistic regression models with income and gender as predictors
-8. Visualizations: boxplots and bar charts
+8. Visualizations: bar charts and line plots
 
 ---
 
 ## Key Findings & Discussion
 
-### Descriptive Results
-| Age Group | Gender | N | Anxiety % | Addiction % |
+### Condition Prevalence by Income Group
+![Prevalence Plot](figures/prevalence_by_group.png)
+
+### Statistical Results
+| Model | Variable | OR | 95% CI | Significant? |
 |---|---|---|---|---|
-| Under 35 | F | 733 | 18.0% | 31.4% |
-| Under 35 | M | 668 | 10.6% | 32.2% |
-| 35 and over | F | 1584 | 36.9% | 54.4% |
-| 35 and over | M | 1490 | 27.2% | 57.8% |
+| Addiction (35+) | Income (log) | 0.85 | [0.80-0.91] | ✅ Yes |
+| Addiction (35+) | Gender (Male) | 1.16 | [1.00-1.34] | ✅ Yes |
+| Anxiety (all) | Gender (Male) | 0.62 | [0.54-0.71] | ✅ Yes |
+| Anxiety (all) | Age 35+ | 2.84 | [2.40-3.36] | ✅ Yes |
 
 ### Main Findings
 1. **Addiction rises sharply with age** for both genders — from ~31% in under 35 
@@ -101,8 +103,10 @@ This project uses the following datasets from the STA220 course (synthetic US he
 ### Interpretation
 The socioeconomic gradient in addiction only emerges after age 35, suggesting 
 that cumulative economic disadvantage over time — rather than current income 
-alone — may drive substance use disorders in men more than women. Gender differences in anxiety are 
-consistent across age groups and independent of income. Women are more likely to suffer from anxiety regardless of income than men, moreso in the older age group. 
+alone — may drive substance use disorders. Gender differences in anxiety are 
+consistent across age groups and independent of income. Women are more likely 
+to suffer from anxiety regardless of income than men, moreso in the older age group.
+
 ---
 
 ## Limitations
@@ -126,7 +130,9 @@ targets::tar_make()
 
 ## Repository Structure
 ```
-R/            # Analysis scripts
-_targets.R    # Workflow pipeline  
-README.md     # Project description
+R/              # Analysis scripts and functions
+_targets.R      # Workflow pipeline
+docs/           # Quarto presentation
+figures/        # Generated plots
+README.md       # Project description
 ```
