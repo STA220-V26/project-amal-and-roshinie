@@ -22,7 +22,7 @@ tar_option_set(
 # Load functions
 tar_source("R/functions.R")
 
-# Download data if needed
+# Download data
 if (!fs::file_exists("data.zip")) {
   message("Downloading data.zip from GitHub")
   curl::curl_download(
@@ -59,6 +59,9 @@ list(
   tar_target(fig_prev, plot_income_prevalence(data_final)),
   tar_target(models, run_models(data_final)),
 
-  # Render Quarto presentation
-  tar_quarto(presentation_slides, "docs/presentation.qmd")
+  # Target for Quarto presentation
+  tar_quarto(presentation_slides, "docs/presentation.qmd"),
+
+  # Target for report
+  tar_quarto(report, "docs/report_roshinie.qmd")
 )

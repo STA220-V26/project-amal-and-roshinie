@@ -12,33 +12,22 @@ model_anxiety|object|05e9db2b20e5601b|||||||||||||||
 file_patients|stem|471a167305704dbb|260d7f4441c98ccb|2c530c1562a7fbd1|342493610|data/data-fixed/patients.csv|t20362.6353009259s|s1747857b|1747857|file|local|vector|||0||
 file_conditions|stem|f61c0fea83f09c76|c0cf6b2931a2653b|2c530c1562a7fbd1|1919619173|data/data-fixed/conditions.csv|t20362.6352777778s|s56208521b|56208521|file|local|vector|||0||
 <<<<<<< HEAD
-data_patients|stem|34ada6b80ed29236|b61e6e092761df0f|f91bf173f520068b|-950687572||t20534.3882053594s|s86120b|86120|qs|local|vector|||0.16||
-data_flags|stem|bd556bff98964a5b|90b68855dfe42605|09f26ef636d8f7d0|-1135103122||t20534.3882224823s|s11936b|11936|qs|local|vector|||1.42||
-data_final|stem|36e8dcb289487e3a|0f6b654b9ef6f3ef|cbe019de8a31d988|-452558307||t20534.3882233049s|s91168b|91168|qs|local|vector|||0||
-fig_interact|stem|d4a3bdf55111b959|881705673980cee5|df0d40b682c87cf2|525930242||t20534.388224258s|s246243b|246243|qs|local|vector|||0.04||
-tab_demo|stem|cdc1b3bd66003699|58a8c75ba0de2cc4|5f18c37086fa3e63|-1979053755||t20534.3882246425s|s100894b|100894|qs|local|vector|||0||
-fig_prev|stem|b1a36912c0a28b29|1cb940e27cf0362e|6bf0490cf94a1200|-701703191||t20534.3882256755s|s275506b|275506|qs|local|vector|||0.06||
-plot_income_prevalence|function|d2c3cc92b04f5224
-pkgs|object|b2e229858d0a1287
-create_demographic_table|function|22fd43a546f7a10d
-plot_demographic_interaction|function|764878b0cbe2a1df
-clean_patients|function|bac231b15aae2c42
-identify_conditions|function|87db302bc813cd75
-presentation_slides|stem|7217b5a05bd9fac0|b800894f4ec77b3a|3bebf87394893382|809846502|docs/presentation.html*docs/presentation.qmd|t20534.4347650135s|s35847b|35847|file|local|vector|||4.28||
 =======
 plot_demographic_interaction|function|42c5b1413bff9e9c
-data_patients|stem|eb50de9075acc42f|b61e6e092761df0f|0f1e92576ebfeb9d|-950687572||t20534.5941661661s|s74030b|74030|qs|local|vector|||0.6||
-data_flags|stem|8f7e8c5b917442d1|90b68855dfe42605|bdcc36c387047cf8|-1135103122||t20534.5941825359s|s11930b|11930|qs|local|vector|||1.11||
-data_final|stem|fd371467b018feea|0f6b654b9ef6f3ef|170570d52055e01f|-452558307||t20534.5941862589s|s78579b|78579|qs|local|vector|||0.03||
 fig_interact|stem|a70ba91e8ffcda3b|881705673980cee5|07e0991e8beea1cc|525930242||t20534.5941892638s|s238384b|238384|qs|local|vector|||0.14||
-tab_demo|stem|3b404408b74a3b5b|58a8c75ba0de2cc4|b018199aa903a17c|-1979053755||t20534.5941910885s|s86059b|86059|qs|local|vector|||0.06||
-fig_prev|stem|a9b24a6d6f2ce1a6|1cb940e27cf0362e|20e6e2b28bddd495|-701703191||t20534.5941952794s|s263771b|263771|qs|local|vector|||0.18||
-models|stem|2f8b7cc7d3c45e99|e70bc805f55efad4|345687556d4d0e09|-1655822660||t20534.5942106376s|s711b|711|qs|local|vector|||1.17||
+>>>>>>> 3974cb504db24941ca3d12d050660902a9f63f81
+data_patients|stem|49d7030960fff6fb|b61e6e092761df0f|0f1e92576ebfeb9d|-950687572||t20538.7470423388s|s74026b|74026|qs|local|vector|||3.23||
+data_flags|stem|e045b345936bcf1f|90b68855dfe42605|bdcc36c387047cf8|-1135103122||t20538.7470749533s|s11930b|11930|qs|local|vector|||2.58||
+tab_summary_stats|stem||e4f0030335022620|2c530c1562a7fbd1|-906361493||t20538.7634331942s||0|qs|local|vector|||0||could not find function 'make_summary_table'
+data_final|stem|fc954af330c1bfa4|0f6b654b9ef6f3ef|d4551dc3b2e2e814|-452558307||t20538.7710259062s|s78573b|78573|qs|local|vector|||0.01||
+tab_demo|stem|0d094fc3e1ddc509|58a8c75ba0de2cc4|d6d69b0578252263|-1979053755||t20538.7710266369s|s86036b|86036|qs|local|vector|||0.03||
+fig_prev|stem|ea04382d6ef624a6|1cb940e27cf0362e|1edb702347caf751|-701703191||t20538.7710285273s|s259942b|259942|qs|local|vector|||0.08||
+models|stem|2d68146bb0565bcf|e70bc805f55efad4|4046e05f277ef009|-1655822660||t20538.7710348244s|s710b|710|qs|local|vector|||0.49||
+presentation_slides|stem|73f436d047f43e34|ba36c9573ceb74dc|dcffe4a5b9c04f75|809846502|docs/presentation.html*docs/presentation.qmd|t20538.7867053828s|s44079b|44079|file|local|vector|||6.17||
 plot_income_prevalence|function|51a5623784492521
 run_models|function|5279875ad26fba0e
 pkgs|object|671489247e95a3a6
 create_demographic_table|function|c058f85a11411abb
 clean_patients|function|e757ce39ea602fcf
 identify_conditions|function|bafe361d16fc405f
-presentation_slides|stem|b6a99eef6997474a|ba36c9573ceb74dc|c0ed0f3063727061|809846502|docs/presentation.html*docs/presentation.qmd|t20534.634360384s|s44201b|44201|file|local|vector|||12.13||
->>>>>>> 3974cb504db24941ca3d12d050660902a9f63f81
+report|stem|c4c2531795736abb|a3461ffd9f94f363|7acc8b10a2bc0cfb|787668912|docs/report_roshinie.pdf*docs/report_roshinie.qmd|t20538.8098858577s|s45849b|45849|file|local|vector|||5.48||

@@ -1,7 +1,7 @@
 ---
 title: "Socioeconomic Drivers of Health"
 subtitle: "Income, Anxiety, and Substance Use"
-author: "Amal Ben Zalouh & Roshinie C. De Silva"
+author: "Amal Ben Zalouh & Roshinie. C. De Silva"
 format: 
   revealjs:
     theme: night
@@ -71,6 +71,36 @@ tar_read(models)$addiction_35plus |>
 *Logistic regression — Anxiety ~ Gender + Age Group*
 ```{r}
 #| echo: false
-#| fig-align: center
-tar_read(fig_interact)
+tar_read(models)$anxiety_all |>
+  kable(digits = 3, col.names = c("Term", "OR", "Std Error",
+                                   "Statistic", "P-value",
+                                   "CI Low", "CI High"))
 ```
+
+> Women are significantly **more likely to have anxiety** than men (OR = 0.62 for males)
+
+> Anxiety nearly **triples after age 35** (OR = 2.84)
+
+## Key Findings
+
+1. **Addiction rises sharply with age** — from ~31% under 35 to ~56% over 35
+2. **Higher income protects against addiction** in adults 35+ (OR = 0.85)
+3. **Women more anxious than men** at all ages (OR = 0.62 for males)
+4. **Anxiety nearly triples after 35** (OR = 2.84)
+5. **Income not associated with anxiety** at any age
+
+## Limitations
+
+- Analysis shows **associations**, not causality
+- Based on **synthetic data** — may not reflect real-world patterns
+- Other confounders not captured (trauma, social isolation, employment)
+- Age calculated using 2024 as reference year
+
+## Conclusion
+
+> *"The socioeconomic gradient in addiction only emerges after age 35 — 
+> suggesting cumulative economic disadvantage over time drives substance 
+> use disorders more than current income alone."*
+
+> *"Gender differences in anxiety are consistent across age groups and 
+> independent of income."*
