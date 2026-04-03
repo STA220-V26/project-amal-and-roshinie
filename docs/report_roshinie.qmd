@@ -1,0 +1,99 @@
+---
+title: "Socioeconomic Drivers of Health: Anxiety and Substance Use"
+author: "Roshinie. C. De Silva"
+format:
+  typst:
+    papersize: us-letter
+    number-sections: true
+    margin:
+      x: 1.25in
+      y: 1.25in
+---
+```{r}
+#| label: setup
+#| include: false
+library(targets)
+# This points one folder up to find the _targets data store
+tar_config_set(store = "../_targets")
+```
+
+# Introduction
+This study investigates the complex relationship between socioeconomic status, demographic factors, and health outcomes—specifically Severe Anxiety and Substance Use (Addiction). Understanding these links is crucial for identifying vulnerable populations and developing targeted public health interventions. We hypothesize that higher income serves as a protective factor, while certain age and gender profiles may face significantly higher risks.
+
+# Methods
+We analyzed a clinical dataset involving over 4,000 patient records. To assess the "income-health gradient", household income was log-transformed and categorized into four groups (Lowest to Highest). Patients were further stratified by gender and age (dichotomized at 35 years). We utilized descriptive statistics for population profiling and applied Logistic Regression to determine the Odds Ratios (OR) for each health condition while controlling for confounding variables.
+
+# Results
+
+## Chaaracteristics of the population
+The study population consists of 4,456 patients. As detailed in @tbl-demographics, there is a distinct difference in health prevalence based on life stage. Older adults (35 and over) represent a larger portion of the sample and exhibit significantly higher rates of both anxiety and addiction compared to the younger cohort.
+
+```{r}
+#| label: tbl-demographics
+#| tbl-cap: "Study population demographics by age group and gender."
+#| echo: false
+
+tar_read(tab_demo)
+```
+
+
+## Prevalence Trends by Income
+When examining the socioeconomic gradient in @fig-prevalence, we see a non-linear relationship. While the "Highest" income group generally shows lower prevalence rates than the "Lower-Mid" group, the protective effect of income appears more pronounced for Substance Use than for Severe Anxiety.
+
+```{r}
+#| label: fig-prevalence
+#| fig-cap: "Prevalence of Anxiety & Substance use in comparison to income."
+#| echo: false
+#| message: false
+tar_read(fig_prev)
+```
+
+## Logistic Regression Analysis
+
+To quantify these relationships, we modeled the odds of addiction and anxiety. @tbl-addiction-models shows that for every unit increase in log-income, the odds of addiction decrease by approximately 16% (OR: 0.841, $p < 0.001$).
+
+```{r}
+#| label: tbl-addiction-models
+#| tbl-cap: "Logistic regression — Addiction ~ Income + Gender"
+#| echo: false
+#| message: false
+
+library(targets)
+library(knitr)
+
+tar_read(models)$addiction_35plus |>
+  kable(
+    digits = 3, 
+    col.names = c("Term", "OR", "Std Error", "Statistic", "P-value", "CI Low", "CI High")
+  )
+```
+
+Conversely, age is the strongest predictor for anxiety. As shown in @tbl-anxiety-all, individuals aged 35 and over are 2.8 times more likely to suffer from severe anxiety than younger adults (OR: 2.838, $p < 0.001$).
+
+```{r}
+#| label: tbl-anxiety-all
+#| tbl-cap: "Logistic regression — Anxiety ~ Gender + Age Group"
+#| echo: false
+
+library(targets)
+library(knitr)
+
+tar_read(models)$anxiety_all |>
+  kable(digits = 3, 
+        col.names = c("Term", "OR", "Std Error", 
+                      "Statistic", "P-value", 
+                      "CI Low", "CI High"))
+```
+
+# Key Findings
+1) Higher income is statistically associated with a reduction in addiction risk.
+
+2) Anxiety prevalence nearly triples in the 35+ demographic compared to those under 35.
+
+3) Females generally exhibit higher rates of anxiety (37% in older adults), whereas males in the same age group show slightly higher rates of addiction (57.7%).
+
+# Limitations
+This analysis is cross-sectional, meaning we can identify associations but cannot definitively claim that low income causes anxiety. Additionally, the reliance on log-transformed income may mask nuances in the very lowest and highest wealth brackets. Future research should incorporate longitudinal data to track these health outcomes over time.
+
+# Conclusion
+Our findings confirm that socioeconomic status and age are critical determinants of mental health. Public health strategies should prioritize financial support programs as a means of reducing substance use, while mental health screening should be intensified for adults entering mid-life (35+), particularly women.

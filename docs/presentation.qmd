@@ -1,0 +1,106 @@
+---
+title: "Socioeconomic Drivers of Health"
+subtitle: "Income, Anxiety, and Substance Use"
+author: "Amal Ben Zalouh & Roshinie. C. De Silva"
+format: 
+  revealjs:
+    theme: night
+    transition: slide
+    slide-number: true
+    scrollable: true
+---
+
+## Research Questions
+
+1. Is **income** associated with the prevalence of **severe anxiety**?
+2. Is **income** associated with **substance use disorders**?
+3. Do these associations differ by **age** or **gender**?
+
+## Data Overview
+
+We linked two primary datasets for this analysis:
+
+- **Patients Dataset**: Demographic info (Income, Age, Gender)
+- **Conditions Dataset**: Clinical records (SNOMED codes for Anxiety and Substance Use)
+
+**Data cleaning:**
+- Removed deceased patients
+- Removed impossible ages
+- Removed extreme income outlier ($20)
+- Kept living adults aged 18+
+- Log-transformed income to address right skew
+```{r setup, include=FALSE}
+library(targets)
+library(ggplot2)
+library(gt)
+library(knitr)
+```
+
+## Population Demographics
+
+*A look at our cohort distribution across age groups and gender.*
+```{r}
+#| echo: false
+tar_read(tab_demo)
+```
+
+## Income vs. Condition Prevalence
+
+*Does earning more correlate with lower health risks?*
+```{r}
+#| echo: false
+#| fig-align: center
+tar_read(fig_prev)
+```
+
+## Statistical Results: Addiction (35 and over)
+
+*Logistic regression — Addiction ~ Income + Gender*
+```{r}
+#| echo: false
+tar_read(models)$addiction_35plus |>
+  kable(digits = 3, col.names = c("Term", "OR", "Std Error", 
+                                   "Statistic", "P-value", 
+                                   "CI Low", "CI High"))
+```
+
+> Higher income is associated with **lower odds of addiction** in adults 35 and over (OR = 0.85, CI [0.80-0.91])
+
+## Statistical Results: Anxiety (All Adults)
+
+*Logistic regression — Anxiety ~ Gender + Age Group*
+```{r}
+#| echo: false
+tar_read(models)$anxiety_all |>
+  kable(digits = 3, col.names = c("Term", "OR", "Std Error",
+                                   "Statistic", "P-value",
+                                   "CI Low", "CI High"))
+```
+
+> Women are significantly **more likely to have anxiety** than men (OR = 0.62 for males)
+
+> Anxiety nearly **triples after age 35** (OR = 2.84)
+
+## Key Findings
+
+1. **Addiction rises sharply with age** — from ~31% under 35 to ~56% over 35
+2. **Higher income protects against addiction** in adults 35+ (OR = 0.85)
+3. **Women more anxious than men** at all ages (OR = 0.62 for males)
+4. **Anxiety nearly triples after 35** (OR = 2.84)
+5. **Income not associated with anxiety** at any age
+
+## Limitations
+
+- Analysis shows **associations**, not causality
+- Based on **synthetic data** — may not reflect real-world patterns
+- Other confounders not captured (trauma, social isolation, employment)
+- Age calculated using 2024 as reference year
+
+## Conclusion
+
+> *"The socioeconomic gradient in addiction only emerges after age 35 — 
+> suggesting cumulative economic disadvantage over time drives substance 
+> use disorders more than current income alone."*
+
+> *"Gender differences in anxiety are consistent across age groups and 
+> independent of income."*
